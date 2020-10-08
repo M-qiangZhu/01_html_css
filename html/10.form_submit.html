@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10.form_submit.html</title>
+</head>
+<body>
+    <!--
+        form标签是表单标签
+            action  提交给服务器的地址
+            method  提交的方式   GET(默认) 或 POST
+
+        注: 如果表单提交的时候,表单项没有发送给服务器的三种情况
+            1 表单项没有name属性值
+            2 单选,复选,下拉列表的option标签,都需要添加value属性
+            3 表单项没有在提交的form标签内
+
+        GET请求的特点:
+            1 浏览器地址栏中的地址是 form的action的属性值+?+请求参数
+                请求参数的格式是: name=value&name=value
+                name 是表单项的name属性值
+                value 就是表单项的值
+                & 每一组参数的分隔符
+
+            2 不安全
+            3 提交的数据有长度限制
+
+        POST请求的特点:
+            1 浏览器地址栏中只有action属性值
+            2 相对get要安全
+            3 提交的数据没有长度限制
+    -->
+    <form action="localhost" method="get">
+        <input type="hidden" name="action" value="login">
+
+        <h1 align="center">用户注册</h1>
+        <table align="center">
+            <tr>
+                <td>用户名 : </td>
+                <td><input type="text" name="username" value="请在此输入用户名" /></td>
+            </tr>
+            <tr>
+                <td>密码 : </td>
+                <td><input type="password" name="password" value="123456" /></td>
+            </tr>
+            <tr>
+                <td>性别 : </td>
+                <td>
+                    <input type="radio" name="sex" value="boy" checked="checked"/>男
+                    <input type="radio" name="sex" value="girl"/>女
+                </td>
+            </tr>
+            <tr>
+                <td>兴趣爱好 : </td>
+                <td>
+                    <input type="checkbox" name="hobby" value="java" checked="checked"/>Java
+                    <input type="checkbox" name="hobby" value="cpp"/>C++
+                    <input type="checkbox" name="hobby" value="js"/>javaScript
+                </td>
+            </tr>
+            <tr>
+                <td>国籍 : </td>
+                <td>
+                    <select name="country">
+                        <option value="none">选择国籍</option>
+                        <option value="cn" selected="selected">中国</option>
+                        <option value="usa">美国</option>
+                        <option value="jp">日本</option>
+                        <option value="kra">韩国</option>
+                        <option value="sgp">新加坡</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>自我评价 : </td>
+                <td><textarea name="desc" rows="10" cols="30">默认文本值</textarea></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="reset" value="恢复"></td>
+                <td align="center"><input type="submit" value="注册"></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="button" value="显示效果"></td>
+                <td><input type="file"></td>
+            </tr>
+        </table>
+
+    </form>
+
+</body>
+</html>
